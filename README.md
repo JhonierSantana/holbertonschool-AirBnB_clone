@@ -22,8 +22,40 @@
     <td>Command interpreter.</td>
   </tr>
   <tr>
-    <td>base_models.py</td>
+    <td>base_model.py</td>
     <td>Defines all common attributes/methods for other classes.</td>
+  </tr>
+  <tr>
+    <td>file_storage.py</td>
+    <td>A class that serializes instances to a JSON file and deserializes JSON file to instances.</td>
+  </tr>
+  <tr>
+    <td>user.py</td>
+    <td>A class User that inherits from BaseModel.</td>
+  </tr>
+  <tr>
+    <td>amenity.py</td>
+    <td>A class Amenity that inherits from BaseModel.</td>
+  </tr>
+  <tr>
+    <td>city.py</td>
+    <td>A class City that inherits from BaseModel.</td>
+  </tr>
+  <tr>
+    <td>place.py</td>
+    <td>A class Place that inherits from BaseModel.</td>
+  </tr>
+  <tr>
+    <td>review.py</td>
+    <td>A class Review that inherits from BaseModel.</td>
+  </tr>
+   <tr>
+    <td>state.py</td>
+    <td>A class State that inherits from BaseModel.</td>
+  </tr>
+  <tr>
+    <td>tests\</td>
+    <td>Contains unittests for the project.</td>
   </tr>
 </table>
 <h2>The Console</h2>
