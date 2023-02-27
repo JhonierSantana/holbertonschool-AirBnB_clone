@@ -18,10 +18,10 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td>console.py
-        base_models.py</td>
-    <td>Command interpreter.
-        Defines all common attributes/methods for other classes.</td>
+    <td>console.py</td>
+    <td>base_model.py</td>
+    <td>Command interpreter.</td>
+    <td>Defines all common attributes/methods for other classes.</td>
   </tr>
 </table>
 <h2>The Console</h2>
