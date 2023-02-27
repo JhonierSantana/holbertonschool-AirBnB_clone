@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" class Base Model """
+
 from datetime import datetime
-import models
 import uuid
+import models
 
 class BaseModel:
     """
