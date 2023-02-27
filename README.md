@@ -65,11 +65,11 @@
 <img src= "https://user-images.githubusercontent.com/56379934/188288321-f18c568e-eb53-4e07-a967-9430c91d32d6.jpg" width="800" height="auto"/>
 
 <h3>Installation</h3>
-<hr>
 <p>git clone</p>
 <p>cd AirBnB_clone</p>
 <p>./console.py</p>
 <hr>
+
 <h2>AUTHORS...</h2>
 <h5>Jhonier Santana.</h5> <img src="https://www.pofilo.fr/img/SPOF-github/github1600.png" width="100" height="100"/>
 <h5>Luisa Maria Lopez.</h5><img src="https://www.pofilo.fr/img/SPOF-github/github1600.png" width="100" height="100"/>
