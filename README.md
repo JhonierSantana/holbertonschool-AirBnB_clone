@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1> AirBnB clone - The console </h1>
-<img src= "https://www.tabbykatz.com/hbnb.png" width="500" height="500"/>
+<img src= "https://www.tabbykatz.com/hbnb.png" width="800" height="auto"/>
 <h2>Background Context</h2>
 <hr>
 <p>We won’t implement all the features, only some of them to cover all fundamental concepts of the higher level programming track</p>
@@ -18,17 +18,17 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td>console.py</td>
-    <td>Command interpreter.</td>
-    <td scope="col">base_models.py</td>
-    <td scope="col">Defines all common attributes/methods for other classes.</td>
+    <td>console.py
+        base_models.py</td>
+    <td>Command interpreter.
+        Defines all common attributes/methods for other classes.</td>
   </tr>
 </table>
 <h2>The Console</h2>
-<img src= "https://user-images.githubusercontent.com/93772775/183030202-7fe98cea-20a5-4da6-9023-018752bdc405.png" width="500" height="500"/>
+<img src= "https://user-images.githubusercontent.com/93772775/183030202-7fe98cea-20a5-4da6-9023-018752bdc405.png" width="800" height="auto"/>
 
 <h2>Data Diagram</h2>
-<img src= "https://user-images.githubusercontent.com/56379934/188288321-f18c568e-eb53-4e07-a967-9430c91d32d6.jpg" width="500" height="500"/>
+<img src= "https://user-images.githubusercontent.com/56379934/188288321-f18c568e-eb53-4e07-a967-9430c91d32d6.jpg" width="800" height="auto"/>
 
 <h3>Installation</h3>
 <hr>
