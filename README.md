@@ -16,12 +16,14 @@
   <tr>
     <th>File</th>
     <th>Description</th>
-    <th>base_models.py</th>
-    <th>Defines all common attributes/methods for other classes.</th>
   </tr>
   <tr>
     <td>console.py</td>
     <td>Command interpreter.</td>
+  </tr>
+  <tr>
+    <td>base_models.py</td>
+    <td>Defines all common attributes/methods for other classes.</td>
   </tr>
 </table>
 <h2>The Console</h2>
