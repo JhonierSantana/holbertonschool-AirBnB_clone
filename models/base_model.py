@@ -4,8 +4,7 @@
 from datetime import datetime
 import uuid
 import models
-
-class BaseModel:
+class BaseMode():
     """
     BaseModel that defines all common attributes/methods for other classes
     PUBLIC INSTANCE ATTRIBUTES:
@@ -58,3 +57,4 @@ class BaseModel:
         dict1["created_at"] = dict1["created_at"].isoformat()
         dict1["updated_at"] = dict1["updated_at"].isoformat()
         return dict1
+.
