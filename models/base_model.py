@@ -11,7 +11,8 @@ class BaseModel:
     PUBLIC INSTANCE ATTRIBUTES:
     id string - assign with an uuid when an instance is created
         uuid.uuid4(): generate a unique id but cant forget to
-        convert to string. The goal is to have a unique id for each BaseModel
+        convert to string. The goal is to have a unique id for each 
+        BaseModel
     created_at: datetime - assign with the current datetime when an instance
         is created
     update_at: datetime - assign with the current datetime when an instance
