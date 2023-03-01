@@ -38,4 +38,4 @@ class FileStorage:
         return self.__file_path
     
     def objects(self):
-        return 
+        return
