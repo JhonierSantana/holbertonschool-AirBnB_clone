@@ -31,5 +31,12 @@ class FileStorage:
     
     
     def reload(self):
-        with open (self.__file_path, "r") as fileread:
-            self.__objects = json.loads(fileread.read())
+        
+        from ..base_model import BaseModel
+        try:
+            with open(self.__file_path, "r") as jsonfile:
+                file_objects = json.load(jsonfile).items()
+                for key, value in file_objects:
+                    eval(value["__class__"](**value))
+        except Exception:
+            return
