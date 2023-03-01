@@ -33,9 +33,3 @@ class FileStorage:
     def reload(self):
         with open (self.__file_path, "r") as fileread:
             self.__objects = json.loads(fileread.read())
-    
-    def file_path(self):
-        return self.__file_path
-    
-    def objects(self):
-        return 
