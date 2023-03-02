@@ -127,6 +127,7 @@ class HBNBCommand(cmd.Cmd):
             if arg in obj.str():
                 counter += 1
         print(counter)
+    
         
     def do_EOF(self, line):
         print()

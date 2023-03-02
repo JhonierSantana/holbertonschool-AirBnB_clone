@@ -20,8 +20,3 @@ class Place(BaseModel):
     latitude = float()
     longitude = float()
     amenity_ids = list()
-
-    def __init__(self, *args, **kwargs):
-        """ Init method for place
-            """
-        super().__init__(*args, **kwargs)

@@ -4,12 +4,20 @@
 """
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from os import path
 
-class FileStorage:
+class FileStorage():
     """
     
     """
-    __file_path = "data.json"
+    __file_path = "file.json"
     __objects = {}
     
     def all(self):
@@ -26,17 +34,20 @@ class FileStorage:
         new_dict = {}
         for (key, value) in self.__objects.items():
             new_dict[key] = value.to_dict()
-        with open(self.__file_path, mode='w') as jsonfile:
+        with open(self.__file_path, mode='w', encoding='utf-8') as jsonfile:
             json.dump(new_dict, jsonfile)
     
     
     def reload(self):
-        
-        from ..base_model import BaseModel
-        try:
-            with open(self.__file_path, "r") as jsonfile:
-                file_objects = json.load(jsonfile).items()
-                for key, value in file_objects:
-                    eval(value["__class__"](**value))
-        except Exception:
-            return
+        """
+        This method loads the dictionary of objects from the JSON file.
+        """
+        if path.exists(self.__file_path):
+            with open(self.__file_path, "r", encoding='utf-8') as fl:
+                json_data = json.load(fl)
+                for i in json_data.values():
+                    class_name = i["__class__"]
+                    del i["__class__"]
+                    self.new(eval(class_name)(**i))
+        else:
+            pass
