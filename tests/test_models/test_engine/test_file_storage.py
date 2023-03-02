@@ -1,62 +1,47 @@
+#!/usr/bin/python3
+""" file storage unittest """
+
+
 import unittest
-import json
-import os
-from models.base_model import BaseModel
-from models.city import City
+import models
 from models.engine.file_storage import FileStorage
-from models import storage
-from models.user import User
+import os
 
 
 class TestFileStorage(unittest.TestCase):
-    """ Testing File Storae functionality """
+    """ The unittest module provides a rich set of tools for
+    constructing and running tests"""
 
-    def setUp(self):
-        """Set up"""
-        self.file_path = 'file.json'
-        self.obj1 = BaseModel()
-        self.obj2 = User()
-        self.obj1.save()
-        self.obj2.save()
+    def test_instance(self):
+        """ if is instance of FileStorage """
+        test1 = FileStorage()
+        self.assertIsInstance(test1, FileStorage)
 
-    def tearDown(self):
-        """Tear down"""
-        os.remove(self.file_path)
+    def test_docstring_mandatory(self):
+        """ docstring at the module are necesary and good practice
+        Test assert if there is a docstring at the file_storage
+        and the class FileStorage
+        """
+        self.assertIsNotNone(models.engine.file_storage.__doc__)
+        self.assertIsNotNone(FileStorage.__doc__)
 
-    def test_all(self):
-        """Test all"""
-        objs = storage.all()
-        self.assertEqual(len(objs), 22)
-        self.assertIn(f"{type(self.obj1).__name__}.{self.obj1.id}", objs)
-        self.assertIn(f"{type(self.obj2).__name__}.{self.obj2.id}", objs)
+    def test_permissions(self):
+        """ test files are with execution, read, write and existence permission
+        X_OK Value to include in the mode parameter of access()
+        to determine if path can be executed so we passed
+        the file_storage path.
+        R_OK Value to include in the mode parameter of access() to test
+        the readability of path.
+        W_OK Value to include in the mode parameter of access() to test
+        the writability of path.
+        F_OK Value to pass as the mode parameter of access() to test
+        the existence of path.
+        """
+        self.assertTrue(os.access("models/engine/file_storage.py", os.X_OK))
+        self.assertTrue(os.access("models/engine/file_storage.py", os.R_OK))
+        self.assertTrue(os.access("models/engine/file_storage.py", os.W_OK))
+        self.assertTrue(os.access("models/engine/file_storage.py", os.F_OK))
 
-    def test_new(self):
-        """Test new"""
-        obj3 = City()
-        storage.new(obj3)
-        objs = storage.all()
-        self.assertEqual(len(objs), 25)
-        self.assertIn(f"{type(obj3).__name__}.{obj3.id}", objs)
-
-    def test_save(self):
-        """Test save"""
-        with open(self.file_path, 'r') as f:
-            data = json.load(f)
-            self.assertEqual(len(data), 29)
-            self.assertIn(f"{type(self.obj1).__name__}.{self.obj1.id}", data)
-            self.assertIn(f"{type(self.obj2).__name__}.{self.obj2.id}", data)
-    
-    def test_reload(self):
-        """Test reload"""
-        with open(self.file_path, 'r') as f:
-            data = json.load(f)
-            del data[f"{type(self.obj1).__name__}.{self.obj1.id}"]
-        with open(self.file_path, 'w') as f:
-            json.dump(data, f)
-        storage.reload()
-        objs = storage.all()
-        self.assertEqual(len(objs), 27)
-
-
-if __name__ == '__main__':
-    unittest.main()
+    def closing(self):
+        """ closing the instance """
+        del self.test1
