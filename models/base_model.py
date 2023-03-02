@@ -5,7 +5,7 @@ from datetime import datetime
 import uuid
 
 
-class BaseMode():
+class BaseModel():
 
     """
     BaseModel that defines all common attributes/methods for other classes
