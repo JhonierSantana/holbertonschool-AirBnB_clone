@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-from models import storage
+"""name module console"""
+
+import cmd
 from models.base_model import BaseModel
-from models.city import City
-from models.amenity import Amenity
+from models.user import User
 from models.place import Place
 from models.state import State
-from models.user import User
+from models.city import City
+from models.amenity import Amenity
 from models.review import Review
-import cmd
-import shlex
+from models import storage
 
 classes = ["BaseModel", "User", "State", "City",
-           "Amenity", "Place" "Review"]
+        "Amenity", "Place" "Review"]
 
 json_file= "file.json"
 
@@ -20,8 +21,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
     
     air_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place,
-                   "Review": Review}
+                "City": City, "Amenity": Amenity, "Place": Place,
+                "Review": Review}
     
     def do_create(self, line):
 
@@ -137,7 +138,6 @@ class HBNBCommand(cmd.Cmd):
     
     def emptyline(self):
         pass
-    
-    if __name__ == '__main__':
-        HBNBCommand().cmdloop()
-        
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()

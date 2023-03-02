@@ -4,10 +4,9 @@
 from datetime import datetime
 import uuid
 import models
+
 class BaseMode():
 
-
-class BaseModel:
     """
     BaseModel that defines all common attributes/methods for other classes
     PUBLIC INSTANCE ATTRIBUTES:
