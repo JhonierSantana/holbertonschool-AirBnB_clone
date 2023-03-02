@@ -18,7 +18,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsInstance(test1, FileStorage)
 
     def test_docstring_mandatory(self):
-        """ docstring at the module are necesary and good practice
+        """ docstring at the module are necessary and good practice
         Test assert if there is a docstring at the file_storage
         and the class FileStorage
         """
@@ -33,7 +33,7 @@ class TestFileStorage(unittest.TestCase):
         R_OK Value to include in the mode parameter of access() to test
         the readability of path.
         W_OK Value to include in the mode parameter of access() to test
-        the writability of path.
+        the drivability of path.
         F_OK Value to pass as the mode parameter of access() to test
         the existence of path.
         """
