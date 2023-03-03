@@ -48,6 +48,12 @@ class BaseModel():
             .format(self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
+        """
+        This method updates the updated_at attribute to the current date
+        and time using the datetime.now() method. It can be used to indicate
+        that an instance has been modified and needs to be saved.
+        
+        """
         from models import storage
         self.updated_at = datetime.now()
         storage.save()
