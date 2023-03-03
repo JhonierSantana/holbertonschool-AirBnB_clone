@@ -17,15 +17,22 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-    """ entry point of the command interpreter """
-    prompt = '(hbnb) '
+    """entry point of the command interpreter"""
 
-    air_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place,
-                   "Review": Review}
+    prompt = "(hbnb) "
+
+    air_classes = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review,
+    }
 
     def do_EOF(self, line):
-        """EOF to exit the program """
+        """EOF to exit the program"""
         return True
 
     def do_quit(self, line):
@@ -33,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """ method called when an empty line is entered in
+        """method called when an empty line is entered in
         response to the prompt.
         onecmd(str): Interpret the argument as though it had been
         typed in response to the prompt.
@@ -43,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, line):
-        """ Creates a new instance of BaseModel, saves it
+        """Creates a new instance of BaseModel, saves it
         (to the JSON file) and prints the id.
         Args:
             arg(str): given class in the command line interpreter
@@ -107,8 +114,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         else:
-            new_list = [str(value) for key,
-                        value in storage.all().items() if arg in key]
+            new_list = [
+                str(value) for key, value in storage.all().items() if arg in key
+            ]
             if len(new_list) != 0:
                 print(new_list)
 
@@ -147,5 +155,5 @@ class HBNBCommand(cmd.Cmd):
         print(counter)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
