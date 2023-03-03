@@ -52,7 +52,6 @@ class BaseModel():
         This method updates the updated_at attribute to the current date
         and time using the datetime.now() method. It can be used to indicate
         that an instance has been modified and needs to be saved.
-        
         """
         from models import storage
         self.updated_at = datetime.now()
