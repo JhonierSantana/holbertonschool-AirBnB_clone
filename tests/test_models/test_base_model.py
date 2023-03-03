@@ -83,7 +83,7 @@ if __name__ == '__main__':
     """
     checks whether the file is running as a stand-alone
     program or has been imported as a module in another file.
-    -------------------------------------------------------------
+    ------------------------------------------------------------
     we use unittest.main(), which executes all the test methods
     defined in the current test class.
     """
