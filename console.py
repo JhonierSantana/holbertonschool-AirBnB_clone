@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             new_list = [
-                str(value) for key, value in storage.all().items() 
+                str(value) for key, value in storage.all().items()
                 if arg in key
             ]
             if len(new_list) != 0:
