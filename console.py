@@ -4,7 +4,6 @@ The cmd module is mainly useful for building custom shells
 that let a user work with a program interactively.
 console.py is the entry point command line interpreter for Airbnb project
 """
-from ast import arg
 import cmd
 from models.base_model import BaseModel
 from models.user import User
@@ -32,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def do_EOF(self, line):
-        """EOF to exit the program"""
+        """EOF to exit the program ctrl +D"""
         return True
 
     def do_quit(self, line):
@@ -145,7 +144,7 @@ class HBNBCommand(cmd.Cmd):
                 setattr(storage.all()[key], obj_upt, value)
                 storage.save()
 
-    def do_count(self, args):
+    def do_count(self, arg):
         """retrieve the number of instances of a
         class: <class name>.count()."""
         counter = 0
